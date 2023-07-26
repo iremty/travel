@@ -30,8 +30,13 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[0],
+      backgroundColor: Colors.white,
+      body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        unselectedFontSize: 0,
+        selectedFontSize: 0,
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
         onTap: onTap,
         currentIndex: currentIndex,
         showSelectedLabels: false,
@@ -40,11 +45,11 @@ class _MainPageState extends State<MainPage> {
         selectedItemColor: Colors.black54,
         unselectedItemColor: Colors.grey.withOpacity(0.5),
         items: [
-          BottomNavigationBarItem(label: "Ana Sayfa", icon: Icon(Icons.apps)),
-          BottomNavigationBarItem(
-              label: "Bar", icon: Icon(Icons.bar_chart_sharp)),
-          BottomNavigationBarItem(label: "Arama", icon: Icon(Icons.search)),
-          BottomNavigationBarItem(label: "Profilim", icon: Icon(Icons.person)),
+          BottomNavigationBarItem(label:"Anasayfa", icon: Icon(Icons.apps)),
+          BottomNavigationBarItem(label:"Bar",
+               icon: Icon(Icons.bar_chart_sharp)),
+          BottomNavigationBarItem( label:"Arama",icon: Icon(Icons.search)),
+          BottomNavigationBarItem(label:"Profilim", icon: Icon(Icons.person)),
         ],
       ),
     );
